@@ -8,6 +8,21 @@ server.use(express.json());
 
 const cursos = ["Node JS", "JavaScript", "React Native", "Java", "Scrum"];
 
+// Middleware GLOBAL
+server.use((req, res, next) => {
+  console.log(`URL Chamada: ${req.url}`);
+
+  return next();
+});
+
+// Função para validar se o Curso está sendo criado corretamente
+function checkCurso(req, res, next) {
+  if (!req.body.name) {
+    return res.status(400).json({ error: "Nome do Curso é OBRIGATÓRIO!" });
+  }
+  return next();
+}
+
 // Listando Todos os Cursos
 server.get("/cursos", (req, res) => {
   return res.json(cursos);
@@ -21,7 +36,7 @@ server.get("/cursos/:index", (req, res) => {
 });
 
 // Criando um Novo Curso
-server.post("/cursos", (req, res) => {
+server.post("/cursos", checkCurso, (req, res) => {
   const { name } = req.body;
   cursos.push(name);
 
@@ -29,7 +44,7 @@ server.post("/cursos", (req, res) => {
 });
 
 //Atualizando um Curso
-server.put("/cursos/:index", (req, res) => {
+server.put("/cursos/:index", checkCurso, (req, res) => {
   const { index } = req.params;
   const { name } = req.body;
 
