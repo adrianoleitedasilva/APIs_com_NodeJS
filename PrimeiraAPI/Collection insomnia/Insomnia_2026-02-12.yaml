@@ -1,0 +1,158 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: Cursos
+meta:
+  id: wrk_c954a98304644d2c854392d7c8e50943
+  created: 1770929756035
+  modified: 1770929756035
+  description: ""
+collection:
+  - url: http://localhost:3000/cursos/1
+    name: Listando um Curso
+    meta:
+      id: req_3e80213a87874f858667e37f0414e541
+      created: 1770929765906
+      modified: 1770935110925
+      isPrivate: false
+      description: ""
+      sortKey: -1770929765907
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/12.3.1
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/cursos/
+    name: Listando todos os cursos
+    meta:
+      id: req_7eda8a279e1342e2953f78759b5ade2b
+      created: 1770935196878
+      modified: 1770935764948
+      isPrivate: false
+      description: ""
+      sortKey: -1770929765857
+    method: GET
+    body:
+      mimeType: application/json
+      text: ""
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.3.1
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/cursos/
+    name: Criando um curso
+    meta:
+      id: req_01ab52c4bd6c49a78973abdf48d30bb5
+      created: 1770935373205
+      modified: 1770935784018
+      isPrivate: false
+      description: ""
+      sortKey: -1770929765807
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"name": "Python" 
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.3.1
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/cursos/6
+    name: Editando um curso
+    meta:
+      id: req_e9d1759e689645939fc4cd7110e38357
+      created: 1770935702719
+      modified: 1770935825359
+      isPrivate: false
+      description: ""
+      sortKey: -1770929765757
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"name": "Go"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.3.1
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/cursos/1
+    name: Deletando um Curso
+    meta:
+      id: req_85517defa0464b63be93e81fe25c2ef4
+      created: 1770935993880
+      modified: 1770936014082
+      isPrivate: false
+      description: ""
+      sortKey: -1770929765707
+    method: DELETE
+    headers:
+      - name: User-Agent
+        value: insomnia/12.3.1
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_4d8a85186646c7d89e45f6525caef920f996dfa8
+    created: 1770929756038
+    modified: 1770929756038
+environments:
+  name: Base Environment
+  meta:
+    id: env_4d8a85186646c7d89e45f6525caef920f996dfa8
+    created: 1770929756037
+    modified: 1770929756037
+    isPrivate: false
